@@ -44,7 +44,7 @@ class LogIn extends Component {
         localStorage.setItem('username', this.state.email)
         this.props.history.push("/userboard");
       } else {
-        this.setState({ errorMessage: "Neteisingi prisijungimo duomenys" });
+        this.setState({ errorMessage: "Invalid login data" });
       }
     } catch (error) {
       console.error(error);
@@ -72,7 +72,7 @@ class LogIn extends Component {
   render() {
     return (
       <div className="containerLogIn">
-        <h1>Prisijunkite prie sistemos</h1>
+        <h1>Log in to the system</h1>
         {this.state.errorMessage.length > 0 && (
           <span className="errorMessage">{this.state.errorMessage}</span>
         )}
@@ -85,7 +85,7 @@ class LogIn extends Component {
               className="form-conrol"
               name="email"
               type="text"
-              placeholder="El. paštas"
+              placeholder="email"
               aria-describedby="sizing-addon1"
               value={this.state.email}
               onChange={this.handleChange}
@@ -99,16 +99,16 @@ class LogIn extends Component {
               className="form-conrol"
               name="password"
               type="password"
-              placeholder="Slaptažodis"
+              placeholder="Password"
               value={this.state.password}
               onChange={this.handleChange}
             />
           </div>
           <button type="submit" className="logInButton">
-            Prisijungti
+            Login
           </button>
           <Link to="/signup">
-            <small>Naujas narys? Registruokis čia</small>
+            <small>New member? Register here</small>
           </Link>
         </form>
       </div>

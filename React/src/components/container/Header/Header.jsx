@@ -24,12 +24,12 @@ class Header extends Component {
           <ul className="nav justify-content-end">
             <li className="nav-item">
               <Link className="nav-link text-light" to="/login">
-                Prisijungti
+                Login
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-light" to="/signup">
-                Registruotis
+                Register
               </Link>
             </li>
           </ul>

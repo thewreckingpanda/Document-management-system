@@ -43,25 +43,25 @@ class AdminMembers extends Component {
 
     const columns = [{
         dataField: 'id',
-        text: 'Vartotojo ID',
+        text: 'User ID',
         headerStyle: { backgroundColor: "#519e8a", width: "130px" }
     }, {
         dataField: 'name',
-        text: 'Vartotojas',
+        text: 'User',
         headerStyle: bgStyle
     }, {
         dataField: 'username',
-        text: 'Vartotojo prisijungimo vardas',
+        text: 'User login name',
         headerStyle: bgStyle
     }];
         
     const expandRow = {
     renderer: row => (
     <div>
-        <p>{ `Vartotojo rolė yra: ${row.roles[0].name}` }</p>
-        <p>{ `Vartotojas paskutinį kartą atliko pakeitimus: ${row.updatedAt}` }</p>
-        <p>{ `Vartotojas užsiregistravimo sistemoje: ${row.createdAt}` }</p>
-        <p>{ `Vartotojas priklauso šioms grupėms:` }</p>
+        <p>{ `The user role is: ${row.roles[0].name}` }</p>
+        <p>{ `User last made changes: ${row.updatedAt}` }</p>
+        <p>{ `User in the registration system: ${row.createdAt}` }</p>
+        <p>{ `The user belongs to these groups:` }</p>
     </div>
     ),
     showExpandColumn: true

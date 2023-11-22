@@ -42,26 +42,26 @@ class SignUp extends Component {
       case "firstname":
         formErrors.firstname = letterValidationRegex.test(value)
           ? ""
-          : "Vardą gali sudaryti tik raidės";
+          : "The first name can only consist of letters";
         break;
       case "lastname":
         formErrors.lastname = letterValidationRegex.test(value)
           ? ""
-          : "Pavardę gali sudaryti tik raidės";
+          : "The last name can only consist of letters";
         break;
       case "email":
         formErrors.email = emailRegex.test(value)
           ? ""
-          : "El. pašto formatas netinkamas (pavyzdys@paštas.lt)";
+          : "email email format is not appropriate (pavyzdys@paštas.lt)";
         break;
       case "password":
         formErrors.password = passwordRegex.test(value)
           ? ""
-          : "Slaptažodis neatitnka reikalavimų (mažiausiai 8 simboliai iš jų bent viena didžioji, viena mažoji raidės ir skaičius)";
+          : "Password does not meet the requirements (at least 8 characters, including at least one uppercase letter, one lowercase letter and a number)";
         break;
       case "repeatPassword":
         formErrors.repeatPassword =
-          value === this.state.password ? "" : "Slaptažodžiai nesutampa";
+          value === this.state.password ? "" : "Passwords do not match";
         break;
       default:
         break;
@@ -144,7 +144,7 @@ class SignUp extends Component {
         this.props.history.push("/login");
       } else {
         this.setState({
-          errorMessage: "Vartotojas tokiu el. pašto adresu jau egzistuoja"
+          errorMessage: "User with such e-mail mail address already exists"
         });
         console.log(userData);
       }
@@ -165,19 +165,19 @@ class SignUp extends Component {
     return (
       <div className="containerSignUp">
         <form className="signUpForm" onSubmit={this.handleSubmitSignUp}>
-          <h1>Sukurti paskyrą</h1>
+          <h1>Create an account</h1>
           {this.state.errorMessage.length > 0 && (
             <Alert variant="danger">{this.state.errorMessage}</Alert>
           )}
           <div>
-            <label htmlFor="firstName">Vardas</label>
+            <label htmlFor="firstName">Name</label>
             <input
               type="text"
               className="firstname"
-              placeholder="Vardas"
+              placeholder="FirstName"
               name="firstname"
               pattern="^[a-zA-ZĄČĘĖĮŠŲŪąčęėįšųū]+$"
-              title="Jūsų vardą gali sudaryti tik raidės"
+              title="Your name can only consist of letters"
               value={firstname}
               onChange={this.handleChange}
               maxLength="30"
@@ -189,14 +189,14 @@ class SignUp extends Component {
             )}
           </div>
           <div>
-            <label htmlFor="lastName">Pavardė</label>
+            <label htmlFor="lastName">Surname</label>
             <input
               type="text"
               className="lastname"
-              placeholder="Pavardė"
+              placeholder="Lastname"
               name="lastname"
               pattern="^[A-Za-zĄČĘĖĮŠŲŪąčęėįšųū]+$"
-              title="Jūsų pavardę gali sudaryti tik raidės"
+              title="Your last name can only consist of letters"
               maxLength="30"
               minLength="2"
               value={lastname}
@@ -208,14 +208,14 @@ class SignUp extends Component {
             )}
           </div>
           <div>
-            <label htmlFor="email">Elektroninis paštas</label>
+            <label htmlFor="email">E-mail</label>
             <input
               type="email"
               className="email"
-              placeholder="El. paštas"
+              placeholder="email"
               name="email"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-              title="elektroninio pašto formatas yra pavyzdys@paštas.lt"
+              title="The e-mail format is example@paštas.lt"
               maxLength="40"
               minLength="4"
               value={email}
@@ -227,16 +227,16 @@ class SignUp extends Component {
             )}
           </div>
           <div>
-            <label htmlFor="password">Slaptažodis</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               className="password"
-              placeholder="Slaptažodis"
+              placeholder="password"
               name="password"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               maxLength="30"
               minLength="8"
-              title="Slaptažodį turi sudaryti ne mažiau 8 simboliai iš jų viena bent didžioji raidė, viena mažoji ir skaičius"
+              title="The password must consist of at least 8 characters, including at least one uppercase letter, one lowercase letter and a number"
               value={password}
               onChange={this.handleChange}
               required
@@ -246,16 +246,16 @@ class SignUp extends Component {
             )}
           </div>
           <div>
-            <label htmlFor="password">Pakartoti slaptažodį</label>
+            <label htmlFor="password">Repeat the password</label>
             <input
               type="password"
               className="repeatPassword"
-              placeholder="Pakartoti slaptažodį"
+              placeholder="repeat password"
               name="repeatPassword"
               maxLength="30"
               minLength="8"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              title="pakartokite slaptažodį"
+              title="repeat the password"
               value={repeatPassword}
               onChange={this.handleChange}
               required
@@ -265,10 +265,10 @@ class SignUp extends Component {
             )}
           </div>
           <button type="submit" className="registrationButton">
-            Registruotis
+            Register
           </button>
           <Link to="/login">
-            <small>Jau esate narys? Prisijunkite</small>
+            <small>Already a member? Log in</small>
           </Link>
         </form>
       </div>

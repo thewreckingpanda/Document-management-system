@@ -11,7 +11,7 @@ class DefaultBody extends Component {
       <div className="containerDefaultBody">
         <div className="defaultBodyBox">
           <div className="mainInfo">
-            <h1>Sveiki atvykę į DVS</h1>
+            <h1>Welcome to DMS</h1>
           </div>
           <div className="intro">
             <img
