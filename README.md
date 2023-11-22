@@ -18,7 +18,7 @@ Server Build      | Maven
 ### Prerequisites
 -  Install Java 8 from the OpenJDK
 -  Install Node.js from the Node.js website
--  Clone the repo `git clone https://github.com/LukasGud/DocumentManagementSystem`
+-  Clone the repo `git clone https://github.com/thewreckingpanda/Document-management-system`
 
 ### Backend
 - Go to your project folder from your terminal
